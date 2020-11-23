@@ -1,0 +1,90 @@
+.bg-white {
+    background-color: white;
+    color: #35495e;
+    .title {
+        color: #35495e;
+        text-align: center;
+        padding-bottom: 3rem;
+    }
+    .headline {
+        border-top: 1px solid #35495e;
+        border-bottom: 1px solid #35495e;
+    }
+}
+.bg-navy {
+    background-color: #35495e;
+    color: white;
+    .title {
+        color: white;
+        text-align: center;
+        padding-bottom: 3rem;
+    }
+    .headline {
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-body {
+        padding: 5rem 3rem;
+    }
+    .headline {
+        padding: 1rem 1rem;
+    }
+    .name {
+        text-align: center;
+    }
+    .portrait {
+        width: 300px;
+    }
+    article {
+        line-height: 200%;
+    }
+}
+@media screen and (min-width: 769px) {
+    .hero-body {
+        padding: 10rem 10%;
+    }
+    .headline {
+        padding: 1rem 3rem;
+    }
+    .portrait_frame {
+        padding: 0rem 4rem 1rem 3rem;
+    }
+    .portrait {
+        width: 300px;
+    }
+    .person {
+        border-left: 3px solid white;
+        padding: 0rem 3rem 0rem 2rem;
+    }
+    article {
+        line-height: 250%;
+    }
+}
+
+#insight {
+    margin: auto;
+}
+article {
+    letter-spacing: 0.2rem;
+}
+.centering {
+    text-align: center;
+    margin: 0 auto;
+}
+.subtitle {
+    font-weight: bold;
+    font-size: 150%;
+    color: white;
+}
+.columns {
+    padding: 3rem 0rem;
+}
+.column {
+}
+.portrait_frame {
+    text-align: center;
+    margin: 0 auto;
+}
