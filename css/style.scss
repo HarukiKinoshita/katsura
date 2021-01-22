@@ -1,33 +1,31 @@
 .bg-white {
     background-color: white;
     color: #35495e;
-    .title {
-        color: #35495e;
-        text-align: center;
-        padding-bottom: 3rem;
-    }
-    .headline {
-        border-top: 1px solid #35495e;
-        border-bottom: 1px solid #35495e;
-    }
+    // .title {
+    //     color: #35495e;
+    //     text-align: center;
+    //     padding-bottom: 3rem;
+    // }
 }
 .bg-navy {
     background-color: #35495e;
     color: white;
-    .title {
-        color: white;
-        text-align: center;
-        padding-bottom: 3rem;
-    }
-    .headline {
-        border-top: 1px solid white;
-        border-bottom: 1px solid white;
+    // .title {
+    //     color: white;
+    //     text-align: center;
+    //     padding-bottom: 3rem;
+    // }
+    @media screen and (min-width: 769px){
+        .headline {
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+        }
     }
 }
 
 @media screen and (max-width: 768px) {
     .hero-body {
-        padding: 5rem 3rem;
+        padding: 5rem 1rem;
     }
     .headline {
         padding: 1rem 1rem;
@@ -39,7 +37,7 @@
         width: 300px;
     }
     article {
-        line-height: 200%;
+        line-height: 175%;
     }
 }
 @media screen and (min-width: 769px) {
@@ -60,16 +58,14 @@
         padding: 0rem 3rem 0rem 2rem;
     }
     article {
-        line-height: 250%;
+        line-height: 200%;
     }
 }
 
 #insight {
     margin: auto;
 }
-article {
-    letter-spacing: 0.2rem;
-}
+
 .centering {
     text-align: center;
     margin: 0 auto;
@@ -77,7 +73,7 @@ article {
 .subtitle {
     font-weight: bold;
     font-size: 150%;
-    color: white;
+    color: #7a7978;
 }
 .columns {
     padding: 3rem 0rem;
@@ -87,4 +83,12 @@ article {
 .portrait_frame {
     text-align: center;
     margin: 0 auto;
+}
+
+.headline {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    @media screen and (min-width: 769px){
+        border-top: 1px solid #35495e;
+        border-bottom: 1px solid #35495e;
+    }
 }
