@@ -24,6 +24,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    img.dt-only {
+        display: none !important;
+    }
     .hero-body {
         padding: 5rem 2rem;
     }
@@ -41,6 +44,9 @@
     }
 }
 @media screen and (min-width: 769px) {
+    img.mb-only {
+        display: none !important;
+    }
     .hero-body {
         padding: 10rem 10%;
     }
