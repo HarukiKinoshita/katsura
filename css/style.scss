@@ -1,3 +1,7 @@
+$yellow: #ffd55d;
+$red: #ff0000;
+$blue: #33477c;
+
 .bg-white {
     background-color: white;
     color: #35495e;
@@ -68,10 +72,6 @@
     }
 }
 
-#insight {
-    margin: auto;
-}
-
 .centering {
     text-align: center;
     margin: 0 auto;
@@ -84,8 +84,7 @@
 .columns {
     padding: 3rem 0rem;
 }
-.column {
-}
+
 .portrait_frame {
     text-align: center;
     margin: 0 auto;
