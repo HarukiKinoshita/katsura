@@ -36,6 +36,12 @@
 </head>
 <body>
 
+<div id="loading">
+    <div class="spinner">
+        <img src="loading-x.svg">
+    </div>
+</div>
+
 <div class="section">
     <div class="container">
         <div class="columns is-vcentered">
@@ -345,6 +351,46 @@
 
 </body>
 </html>
+<style>
+    #loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+  .spinner, .spinner::after {
+    width: 20em;
+    height: 20em;
+  }
+  .spinner {
+    margin: 40vh auto;
+    font-size: 10px;
+    position: relative;
+    /* border-top: 1em solid rgba(0, 46, 78, 0.2);
+    border-right: 1em solid rgba(0, 46, 78, 0.2);
+    border-bottom: 1em solid rgba(0, 46, 78, 0.2);
+    border-left: 1em solid #ffffff;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: infinite ease-in-out;
+    animation: infinite ease-in-out; */
+  }
+  .loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+</style>
 <script>
   AOS.init();
+  window.onload = function () {
+    const spinner = document.getElementById('loading');
+    spinner.classList.add('loaded');
+  }
 </script>
