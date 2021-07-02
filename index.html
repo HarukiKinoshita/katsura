@@ -26,7 +26,7 @@
   <meta property="og:title" content="TEDxTsukuba" />
   <meta property="og:description" content="Ideas Worth Spreading | 価値あるアイディアを、つくばから、世界へ。" />
   <meta property="og:site_name" content="TEDxTsukuba Official Website" />
-  <meta property="og:image" content="https://tedxtsukuba.netlify.com/favicon.png" />
+  <meta property="og:image" content="https://tedxtsukuba.netlify.com/assets/x_white_square.png" />
   <meta property="og:name" content="TEDxTsukuba" />
   <meta property="og:url" content="https://www.tedxtsukuba.com" />
 
@@ -71,14 +71,14 @@
   <section class="section">
     <div class="container">
       <div class="columns is-vcentered reverse-row-order">
-        <div class="column is-5-tablet is-6-widescreen has-text-right">
+        <div class="column is-5-tablet is-6-fullhd has-text-right">
           <figure class="image">
             <img src="assets/landscape.svg">
           </figure>
         </div>
         <div class="column">
           <p class="vercel-headline has-text-weight-bold pl-2" x-html="$t('motto')"></p>
-          <div class="mt-5">
+          <div class="mt-6">
             <img class="" width="50%" src="./assets/x_logo_white.png" alt="TEDxTsukuba Logo">
           </div>
         </div>
@@ -188,7 +188,7 @@
                                 <span x-text="$t(talk.language)"></span>
                               </span>
                             </a>
-                            <p class="" x-text="talk.talk" style="height: 3.25rem;"></p>
+                            <p style="height: 3.25rem;">"<span x-text="talk.talk"></span>"</p>
                           </div>
                         </div>
                       </div>
@@ -294,7 +294,7 @@
 
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", system-ui, "Segoe UI", Roboto, Arial, sans-serif;
     }
     section.is-light {
       /* background-image: linear-gradient(315deg, #fee2f8 0%, #dcf8ef 74%) !important; */
@@ -335,7 +335,7 @@
       -webkit-text-fill-color: transparent;
       font-weight: 800;
       font-size: 3rem;
-      line-height: 1;
+      line-height: 1.2;
       letter-spacing: -2px;
       padding-bottom: 10px;
     }

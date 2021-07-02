@@ -85,6 +85,7 @@ var events = [
         name_ja: "黒田なつ子",
         name_en: "Natsuko Kuroda",
         title_ja: "Choreographer",
+        talk: "Speech by Natsuko Kuroda's Body ~ 身体（わたし）の声が聞こえますか ~",
         language: "ja",
         video: "Speech by Natsuko Kuroda's Body ~ 身体（わたし）の声が聞こえますか ~"
       },
