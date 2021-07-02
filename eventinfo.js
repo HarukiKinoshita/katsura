@@ -46,7 +46,7 @@ var events = [
     theme: "Launch Your Vision <br> ~From Tsukuba to Space ~",
     date: "May 14, 2017",
     place_ja: "JAXA 筑波宇宙センター",
-    place_en: "JAXA Tsukuba Space Centre",
+    place_en: "JAXA Tsukuba Space Center",
     color: "is-white",
     talks: [
       {
