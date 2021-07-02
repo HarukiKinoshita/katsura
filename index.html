@@ -183,13 +183,15 @@
                               <p x-text="talk.title_ja" class="has-text-grey-light"></p>
                             </p>
                             <hr class="my-2">
+                            <p class="mb-1" style="min-height: 3.25rem;">
+                              <span class="is-italic is-size-5" x-text="talk.talk" style="font-family:'Times New Roman', Times, serif; line-height: 1;"></span>
+                            </p>
                             <a x-bind:href="talk.video" target="_blank">
-                              <span class="tag mt-1 mb-2">
+                              <span class="tag is-small">
                                 <i class="fab fa-youtube fa-lg has-text-red" aria-hidden="true"></i>&nbsp;
                                 <span x-text="$t(talk.language)"></span>
                               </span>
                             </a>
-                            <p style="height: 3.25rem;">"<span x-text="talk.talk"></span>"</p>
                           </div>
                         </div>
                       </div>
