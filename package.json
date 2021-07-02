@@ -1,7 +1,22 @@
 {
-  "start": "gulp serve",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-bro": "^2.0.0"
-  }
+  "name": "katsura",
+  "description": "Official Website for TEDxTsukuba",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files='./*.html, ./*.css'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarukiKinoshita/katsura.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HarukiKinoshita/katsura/issues"
+  },
+  "homepage": "https://github.com/HarukiKinoshita/katsura#readme",
+  "dependencies": {}
 }
