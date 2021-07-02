@@ -183,15 +183,17 @@
                               <p x-text="talk.title_ja" class="has-text-grey-light"></p>
                             </p>
                             <hr class="my-2">
-                            <p class="mb-1" style="min-height: 3.25rem;">
-                              <span class="is-italic is-size-5" x-text="talk.talk" style="font-family:'Times New Roman', Times, serif; line-height: 1;"></span>
-                            </p>
-                            <a x-bind:href="talk.video" target="_blank">
-                              <span class="tag is-small">
-                                <i class="fab fa-youtube fa-lg has-text-red" aria-hidden="true"></i>&nbsp;
-                                <span x-text="$t(talk.language)"></span>
-                              </span>
-                            </a>
+                            <div class="card-bottom">
+                              <p class="mb-1">
+                                <span class="is-italic is-size-5" x-text="talk.talk" style="font-family:'Times New Roman', Times, serif; line-height: 1;"></span>
+                              </p>
+                              <a x-bind:href="talk.video" target="_blank">
+                                <span class="tag is-small">
+                                  <i class="fab fa-youtube fa-lg has-text-red" aria-hidden="true"></i>&nbsp;
+                                  <span x-text="$t(talk.language)"></span>
+                                </span>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -216,6 +218,7 @@
             <h2 class="title" x-text="$t('enjoy')"></h2>
             <iframe class="my-6" src="https://open.spotify.com/embed/show/1VXcH8QHkjRcTCEd88U3ti" width="100%" height="232"
               frameBorder="0" allowtransparency="true" allow="encrypted-media" style="max-width: 720px;"></iframe>
+            <p class="has-text-left" x-text="$t('podcast')"></p>
           </div>
           <div class="column">
             <h2 class="title" x-text="$t('join')"></h2>
@@ -223,6 +226,7 @@
               <figure class="image my-6">
                 <img src="assets/skyscraper.png" alt="TEDxUTsukuba">
               </figure>
+            <p class="mb-5 has-text-left" x-text="$t('tedxutsukuba')"></p>
             </a>
             <a href="https://www.twitter.com/tedxutsukuba" target="_blank"><span class="icon mx-3"><i class="fab fa-twitter fa-2x"
                   aria-hidden="true"></i></span></a>
@@ -349,6 +353,9 @@
       .vercel-headline {
         font-size: 4rem;
       }
+      .card-bottom {
+        min-height: 5rem;
+      }
     }
     /* section.hero {
       -webkit-clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
@@ -413,6 +420,8 @@
             summary: "TEDxTsukubaは茨城県つくば市を本拠地とするTEDxイベントです。",
             detail: "これからの時代、地域社会の発展に必要なことは何でしょうか。そのために地域社会に暮らすわたしたちに求められる役割とは何でしょうか。わたしたちTEDxTsukubaはSpread Globally, Connect Locallyというスローガンの元、これらの問いに対して「地域の情報発信と共有」という切り口から取り組んでいます。TEDxTsukubaでは、つくば市を拠点に活躍する行動力ある方々を講演者に招き、彼らのアイデアの発信を通じて、みなさんにつくば市の「今」を伝えていきます。また、TEDxTsukubaは一般的な傍観型イベントと異なり、講演者・参加者・スタッフにより作られる双方向交流型イベントです。イベント参加者同士のコミュニケーションを通じて新たなアクションを創造し、つくば市の知的コミュニティーの形成、活性化を図っていきます。"
           },
+          podcast: "TEDには、好奇心旺盛なリスナーのためのさまざまなポッドキャストがあります。科学やテクノロジーをはじめ、心理学やデザインといった分野に興味があり、日々最もエキサイティングなアイデアを深く知りたいと願う皆さんのために提供されています。",
+          tedxutsukuba: "TEDxUTsukubaは、筑波大学の学生によって運営されており、イベントにはどなたでもご参加いただけます。SNSをフォローして、イベント情報をチェックしてみてください！",
           deep: {
             one: 'あいうえお',
             two: { three: '下記くけこ' },
@@ -429,6 +438,8 @@
             summary: "TEDxTsukuba is one of TEDx events organized at Tsukuba Science city, Ibaraki, Japan.",
             detail: "Through TEDxTsukuba, we focus on bringing people of different backgrounds together to share great ideas worth spreading, based on Tsukuba Science City. We will invite speakers who have brilliant ideas and visions and take community-based action to vitalize the region."
           },
+          podcast: "TED has a wide variety of podcasts for the curious. They're for listeners as excited by psychology and design as science and technology—who want to dig deep into today’s most exciting ideas.",
+          tedxutsukuba: "TEDxUTsukuba is run by passionate students at the University of Tsukuba. Anyone can join their events. Stay tuned on their social media!",
           deep: {
             one: 'one',
             two: { three: 'two' },
