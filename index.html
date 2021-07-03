@@ -78,9 +78,9 @@
           </figure>
         </div>
         <div class="column">
-          <p class="vercel-headline has-text-weight-bold pl-2" x-html="$t('motto')"></p>
-          <div class="mt-6">
-            <img class="" width="50%" src="./assets/x_bgwhite_oneline.svg" alt="TEDxTsukuba Logo">
+          <p class="vercel-headline has-text-weight-bold has-text-centered-mobile" x-html="$t('motto')"></p>
+          <div class="mt-6 mx-auto has-text-centered-mobile">
+            <img src="./assets/x_bgwhite_oneline.svg" alt="TEDxTsukuba Logo" style="width: 50%; margin-auto;">
           </div>
         </div>
       </div>
@@ -355,6 +355,11 @@
       }
       .card-bottom {
         min-height: 5rem;
+      }
+    }
+    @media screen and (max-width: 560px) {
+      .vercel-headline {
+        font-size: 2.5rem;
       }
     }
     /* section.hero {
