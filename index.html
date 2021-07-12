@@ -69,20 +69,27 @@
     </div>
   </nav>
   
-  <section class="section">
-    <div class="container">
-      <div class="columns is-vcentered reverse-row-order">
-        <div class="column is-5-tablet is-6-fullhd has-text-right">
-          <figure class="image">
-            <img src="assets/landscape.svg">
-          </figure>
-        </div>
-        <div class="column">
-          <p class="vercel-headline has-text-weight-bold has-text-centered-mobile" x-html="$t('motto')"></p>
-          <div class="mt-6 mx-auto has-text-centered-mobile">
-            <img src="./assets/x_bgwhite_oneline.svg" alt="TEDxTsukuba Logo" style="width: 50%; margin-auto;">
+  <section class="hero is-fullheight-with-navbar">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered reverse-row-order">
+          <div class="column is-5-tablet is-6-fullhd has-text-right">
+            <figure class="image">
+              <img src="assets/landscape.svg">
+            </figure>
+          </div>
+          <div class="column">
+            <p class="vercel-headline has-text-weight-bold has-text-centered-mobile" x-html="$t('motto')"></p>
+            <div class="mt-6 mx-auto has-text-centered-mobile">
+              <img src="./assets/x_bgwhite_oneline.svg" alt="TEDxTsukuba Logo" style="width: 50%; margin-auto;">
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="hero-foot has-text-centered">
+      <div class="container">
+        <img id="scroll" src="assets/chevron-down-solid.svg">
       </div>
     </div>
   </section>
@@ -129,7 +136,7 @@
 
   <div x-data="{ locale: $locale(), events: events }">
     <template x-for="(event, index) in events">
-      <section class="hero" x-bind:class="event.color">
+      <section class="hero" x-bind:class="event.color" x-bind:id="event.year">
         <div class="hero-body">
           <div class="columns is-multiline">
             <div class="column is-12-tablet is-2-desktop">
@@ -185,7 +192,7 @@
                             <hr class="my-2">
                             <div class="card-bottom">
                               <p class="mb-2">
-                                <span class="is-italic is-size-5" x-text="talk.talk" style="font-family:'Times New Roman', Times, serif; line-height: 1;"></span>
+                                <span class="is-italic is-size-6" x-text="talk.talk" style="font-family:'Times New Roman', Times, serif; line-height: 1;"></span>
                               </p>
                               <a x-bind:href="talk.video" target="_blank">
                                 <span class="tag is-info is-light is-small">
@@ -312,9 +319,6 @@
       background-color: #d9e4f5;
       background-image: linear-gradient(315deg, #ffffff 0%, #f5e3e6 74%);
     }
-    section#news {
-      background-color: aliceblue;
-    }
     .has-text-red {
       color: #f00;
     }
@@ -344,6 +348,20 @@
       line-height: 1.2;
       letter-spacing: -2px;
       padding-bottom: 10px;
+    }
+    #scroll {
+      width: 36px;
+      margin-bottom: 1rem;
+      animation: flash 2s linear;
+      animation-iteration-count: 3;
+    }
+    @keyframes flash {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
     }
     @media screen and (min-width: 1024px) {
       .event-title {
