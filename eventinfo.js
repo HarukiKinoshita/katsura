@@ -8,11 +8,21 @@ var events = [
     color: "is-light",
     talks: [
       {
+        name_ja: "佐々木圭一",
+        name_en: "Keiichi Sasaki",
+        title_ja: "コピーライター",
+        talk: "「伝え方が9割」",
+        language: "ja",
+        image: 'sasaki.png',
+        video: ""
+      },
+      {
         name_ja: "鷹鳥屋明",
         name_en: "Akira Takatoriya",
         title_ja: "「中東で一番有名な日本人」",
         talk: "How I become most famous Japanese in Middle East",
         language: "ja",
+        image: 'takatoriya.jpg',
         video: "https://youtu.be/e0CZ8K-hb98"
       },
       {
@@ -21,6 +31,7 @@ var events = [
         title_ja: "宇宙航空研究開発機構(JAXA) 研究開発員",
         talk: "最先端が生む最先端",
         language: "ja",
+        image: 'mitani.jpg',
         video: "https://www.youtube.com/watch?v=0SsmEihRykk"
       },
       {
@@ -29,6 +40,7 @@ var events = [
         title_ja: "Student",
         talk: "What do you put on a fried egg?",
         language: "ja",
+        image: 'ribamisa.jpg',
         video: "https://www.youtube.com/watch?v=O1gWpiH0rzY"
       },
       {
@@ -37,6 +49,7 @@ var events = [
         title_ja: "NPO法人ジェネクリ代表理事",
         talk: "日コンとオタ芸パフォーマンスの融合",
         language: "ja",
+        image: 'gekitora.jpg',
         video: "https://www.youtube.com/watch?v=KDbu2ImWjp4"
       }
     ]

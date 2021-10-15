@@ -87,10 +87,8 @@
         </div>
       </div>
     </div>
-    <div class="hero-foot has-text-centered">
-      <div class="container">
-        <img id="scroll" src="assets/chevron-down-solid.svg">
-      </div>
+    <div class="hero-foot has-text-centered pb-5">
+      <i class="fas fa-2x fa-chevron-down has-text-grey-light"></i>
     </div>
   </section>
 
@@ -170,37 +168,51 @@
               <div class="columns is-multiline">
                 <template x-for="talk in event.talks">
                   <div class="column is-6">
-                    <div class="card">
-                      <div class="card-content">
-                        <div class="columns is-mobile">
-                          <div class="column is-3-mobile is-4-tablet is-3-desktop">
-                            <figure class="image is-square">
-                              <img class="is-rounded" src="assets/gradienta-Fqeh4qbQI5g-unsplash.jpg">
-                            </figure>
-                          </div>
-                          <div class="column">
-                            <p>
-                              <template x-if="$locale() === 'ja'">
-                                <span x-text="talk.name_ja" class="is-size-4 is-size-5-tablet is-size-4-desktop"></span>
-                              </template>
-                              <template x-if="$locale() === 'en'">
-                                <span x-text="talk.name_en" class="is-size-5"></span>
-                              </template>
-                              <br>
-                              <p x-text="talk.title_ja" class="has-text-grey-light"></p>
+                    <div class="notification is-white p-5">
+                      <div class="columns is-mobile">
+                        <div class="column is-3-mobile is-4-tablet is-3-desktop">
+                          <figure class="image is-square">
+                            <template x-if="talk.image">
+                              <img class="is-rounded" style="object-fit: cover;" :src="`assets/speakers/${event.year}/${talk.image}`">
+                            </template>
+                            <template x-if="!talk.image">
+                              <img class="is-rounded" style="object-fit: cover;" src="assets/gradienta-Fqeh4qbQI5g-unsplash.jpg">
+                            </template>
+                          </figure>
+                        </div>
+                        <div class="column">
+                          <p>
+                            <template x-if="$locale() === 'ja'">
+                              <span x-text="talk.name_ja" class="is-size-4 is-size-5-tablet is-size-4-desktop"></span>
+                            </template>
+                            <template x-if="$locale() === 'en'">
+                              <span x-text="talk.name_en" class="is-size-5"></span>
+                            </template>
+                            <br>
+                            <p x-text="talk.title_ja" class="has-text-grey"></p>
+                          </p>
+                          <hr class="my-2">
+                          <div class="card-bottom">
+                            <p class="mb-4">
+                              <span class="is-italic is-size-6" x-text="talk.talk" style="font-family:'Times New Roman', Times, serif; line-height: 1;"></span>
                             </p>
-                            <hr class="my-2">
-                            <div class="card-bottom">
-                              <p class="mb-2">
-                                <span class="is-italic is-size-6" x-text="talk.talk" style="font-family:'Times New Roman', Times, serif; line-height: 1;"></span>
-                              </p>
-                              <a x-bind:href="talk.video" target="_blank">
-                                <span class="tag is-info is-light is-small">
-                                  <i class="fab fa-youtube fa-lg has-text-red" aria-hidden="true"></i>&nbsp;
-                                  <span x-text="$t(talk.language)"></span>
-                                </span>
-                              </a>
-                            </div>
+                            <nav class="level is-mobile">
+                              <div class="level-left">
+                                <div class="level-item">
+                                  <i class="fas fa-headphones-alt mr-1"></i>
+                                  <span class="is-size-7" x-text="$t(talk.language)"></span>
+                                </div>
+                              </div>
+                              <div class="level-right">
+                                <div class="level-item">
+                                  <a x-bind:href="talk.video" target="_blank" class="button is-info is-light">
+                                    <i class="fab fa-youtube fa-lg has-text-red" aria-hidden="true"></i>&nbsp;
+                                    <span x-text="$t('watch')"> </span>
+                                  </a>
+                                </div>
+                              </div>
+                            </nav>
+                            
                           </div>
                         </div>
                       </div>
@@ -437,6 +449,7 @@
           en: "英語",
           title: 'TEDxTsukuba 公式サイト',
           motto: 'Spread Globally, <br>Connect Locally.',
+          watch: '動画を観る',
           enjoy: '家でTEDを楽しむ',
           join: 'コミュニティに参加する',
           about: {
@@ -455,6 +468,7 @@
           en: "English",
           title: 'TEDxTsukuba Official Website',
           motto: 'Spread Globally, <br>Connect Locally.',
+          watch: 'Watch',
           enjoy: 'Enjoy TED at home',
           join: 'Dive into TEDx community',
           about: {
