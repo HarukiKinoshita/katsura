@@ -107,86 +107,68 @@
               <h3 x-text="event.year" class="event-title has-text-centered"></h3>
             </div>
             <div class="column is-12-tablet is-10-desktop is-9-fullhd">
-              <!-- <details open class="mb-6 has-text-right">
-                <summary class="button is-small mb-4">Event Details</summary> -->
-                <div class="columns has-text-left is-vcentered mb-6">
-                  <div class="column">
-                    <p class="title is-6">TEDxTsukuba <span x-text="event.year"></p>
-                    <p class="title is-3" x-html="event.theme"></p>
-                    <p class="has-text-grey" x-text="event.date"></p>
-                    <template x-if="$locale() === 'ja'">
-                      <p class="has-text-grey" x-text="event.place_ja"></p>
-                    </template>
-                    <template x-if="$locale() === 'en'">
-                      <p class="has-text-grey" x-text="event.place_en"></p>
-                    </template>
-                  </div>
-                  <div class="column">
-                    <figure class="image">
-                      <img :src="`assets/event/${event.year}.jpg`">
-                    </figure>
-                  </div>
+              <div class="columns has-text-left is-vcentered mb-6">
+                <div class="column">
+                  <p class="title is-6">TEDxTsukuba <span x-text="event.year"></p>
+                  <p class="title is-3" x-html="event.theme"></p>
+                  <p class="has-text-grey" x-text="event.date"></p>
+                  <template x-if="$locale() === 'ja'">
+                    <p class="has-text-grey" x-text="event.place_ja"></p>
+                  </template>
+                  <template x-if="$locale() === 'en'">
+                    <p class="has-text-grey" x-text="event.place_en"></p>
+                  </template>
                 </div>
-              <!-- </details> -->
+                <div class="column">
+                  <figure class="image">
+                    <img :src="`assets/event/${event.year}.jpg`">
+                  </figure>
+                </div>
+              </div>
 
-
-
-              <div class="columns is-multiline">
-                <template x-for="talk in event.talks">
-                  <div class="column is-6">
-                    <div class="notification is-white p-4">
-                      <div class="columns is-mobile">
-                        <div class="column is-3-mobile is-4-tablet is-3-desktop">
-                          <figure class="image is-square">
-                            <template x-if="talk.image">
-                              <img class="is-rounded" style="object-fit: cover;" :src="`assets/speakers/${event.year}/${talk.image}`">
-                            </template>
-                            <template x-if="!talk.image">
-                              <img class="is-rounded" style="object-fit: cover;" src="assets/gradienta-Fqeh4qbQI5g-unsplash.jpg">
-                            </template>
-                          </figure>
-                        </div>
-                        <div class="column pl-0">
-                          <p>
-                            <template x-if="$locale() === 'ja'">
-                              <span x-text="talk.name_ja" class="is-size-5"></span>
-                            </template>
-                            <template x-if="$locale() === 'en'">
-                              <span x-text="talk.name_en" class="is-size-5"></span>
-                            </template>
-                            <br>
-                            <p x-text="talk.title_ja" class="has-text-grey is-size-6"></p>
-                          </p>
-                          <hr class="my-2">
-                          <div class="card-bottom">
-                            <p class="mb-4">
-                              <span class="is-italic is-size-6" x-text="talk.talk" style="font-family:'Times New Roman', Times, serif; line-height: 1;"></span>
-                            </p>
-                            <nav class="level is-mobile">
-                              <div class="level-left">
-                                <div class="level-item">
-                                  <i class="fas fa-headphones-alt mr-1"></i>
-                                  <span class="is-size-7" x-text="$t(talk.language)"></span>
-                                </div>
-                              </div>
-                              <div class="level-right">
-                                <div class="level-item">
-                                  <a x-bind:href="talk.video" target="_blank" class="button is-info is-light is-small">
-                                    <i class="fab fa-youtube fa-lg has-text-red" aria-hidden="true"></i>&nbsp;
-                                    <span x-text="$t('watch')"> </span>
-                                  </a>
-                                </div>
-                              </div>
-                            </nav>
-                            
-                          </div>
-                        </div>
+              <div class="notification is-white p-5">
+                <template x-for="(talk, index) in event.talks">
+                  <div>
+                    <div class="is-flex is-align-items-center mb-3">
+                      <div class="flex-start is-flex-grow-1 pr-1">
+                        <a x-bind:href="talk.video" target="_blank" style="text-decoration: none;">
+                          <span class="has-text-weight-bold is-size-6" x-text="talk.talk"></span>
+                        </a>
+                      </div>
+                      <div class="flex-end">
+                        <a x-bind:href="talk.video" target="_blank">
+                          <i class="fab fa-youtube fa-lg has-text-red" aria-hidden="true"></i>&nbsp;
+                        </a>
                       </div>
                     </div>
+                    <div class="is-flex is-align-items-center">
+                      <div class="mr-3 portrait is-flex-shrink-0">
+                        <figure class="image is-square">
+                          <template x-if="talk.image">
+                            <img class="is-rounded" style="object-fit: cover;" :src="`assets/speakers/${event.year}/${talk.image}`">
+                          </template>
+                          <template x-if="!talk.image">
+                            <img class="is-rounded" style="object-fit: cover;" src="assets/gradienta-Fqeh4qbQI5g-unsplash.jpg">
+                          </template>
+                        </figure>
+                      </div>
+                      <div>
+                        <p class="is-size-6-tablet is-size-7-mobile">
+                          <template x-if="$locale() === 'ja'">
+                            <span x-text="talk.name_ja" class=""></span>
+                          </template>
+                          <template x-if="$locale() === 'en'">
+                            <span x-text="talk.name_en" class=""></span>
+                          </template>
+                          <br>
+                        <p x-text="talk.title_ja" class="has-text-grey is-size-7"></p>
+                        </p>
+                      </div>
+                    </div>
+                    <template x-if="index < event.talks.length-1"><hr /></template>
                   </div>
                 </template>
               </div>
-              <!-- Details were here -->
             </div>
           </div>
         </div>
@@ -352,10 +334,16 @@
       .card-bottom {
         min-height: 5rem;
       }
+      .portrait {
+        width: 54px;
+      }
     }
     @media screen and (max-width: 560px) {
       .vercel-headline {
         font-size: 2.5rem;
+      }
+      .portrait {
+        width: 36px;
       }
     }
     /* section.hero {
@@ -394,8 +382,11 @@
     animation: infinite ease-in-out; 
     }
     .loaded {
-    opacity: 0;
-    visibility: hidden;
+      opacity: 0;
+      visibility: hidden;
+    }
+    hr {
+      margin: 1rem 0;
     }
   </style>
 
