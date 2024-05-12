@@ -72,7 +72,7 @@
   <section class="hero is-fullheight-with-navbar">
     <div class="hero-body">
       <div class="container">
-        <div class="columns is-vcentered reverse-row-order mb-6">
+        <div class="columns is-vcentered reverse-row-order">
           <div class="column is-5-tablet is-6-fullhd has-text-right">
             <figure class="image">
               <img src="assets/landscape.svg">
@@ -80,21 +80,30 @@
           </div>
           <div class="column">
             <p class="vercel-headline has-text-weight-bold has-text-centered-mobile" x-html="$t('motto')"></p>
-            <div class="mt-4 mx-auto has-text-centered-mobile">
-              <img src="./assets/x_bgwhite_oneline.svg" alt="TEDxTsukuba Logo" style="width: 50%; margin: auto;">
+            <div class="mt-6 mx-auto has-text-centered-mobile">
+              <h1><img src="./assets/x_bgwhite_oneline.svg" alt="TEDxTsukuba Logo" style="width: 50%; margin: auto;"><span class="is-hidden">TEDxTsukuba</span></h1>
             </div>
           </div>
-        </div>
-        <div x-data="{ locale: $locale(), events: events }">
-          <p x-text="$t('event_listing')"></p>
-          <template x-for="(event, index) in events" id="event">
-            <a x-bind:href="'#' + event.year" x-text="event.year" class="mr-2"></a>
-          </template>
         </div>
       </div>
     </div>
     <div class="hero-foot has-text-centered pb-5">
       <i class="fas fa-2x fa-chevron-down has-text-grey-light"></i>
+    </div>
+  </section>
+
+  <section class="hero is-medium">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title has-text-centered" x-text="$t('about.headline')"></h2>
+        <p x-text="$t('about.detail')"></p>
+        <div x-data="{ locale: $locale(), events: events }" class="mt-6 has-text-centered">
+          <h3 x-text="$t('event_listing')" class="mb-3"></h3>
+          <template x-for="(event, index) in events" id="event">
+            <a x-bind:href="'#' + event.year" x-text="event.year" class="button is-rounded mr-2 mb-2"></a>
+          </template>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -237,9 +246,6 @@
         Follow TED on Twitter at <a href="http://twitter.com/TEDTalks" target="_blank">http://twitter.com/TEDTalks</a> or on Facebook at <a href="http://www.facebook.com/TED" target="_blank">http://www.facebook.com/TED</a>
 
       </p>
-      <p class="block has-text-grey">
-        <strong>About TEDxTsukuba</strong><br>
-        <span x-text="$t('about.detail')"></span>
     </div>
   </section>
 
@@ -247,7 +253,7 @@
   <footer class="footer">
     <div class="has-text-centered">
       <img class="" width="240px" src="./assets/x_bgwhite_oneline.svg" alt="TEDxTsukuba Logo">
-      <p class="mt-4 mb-2">Copyright &copy; 2021 TEDxTsukuba All rights reserved.</p>
+      <p class="mt-4 mb-2">Copyright &copy; 2024 TEDxTsukuba All rights reserved.</p>
       <p>Contact: tedxtsukuba&#64;gmail.com</p>
       <br>
       <a href="https://www.twitter.com/tedxtsukuba" target="_blank"><span class="icon mx-3"><i class="fab fa-twitter fa-2x has-text-red" aria-hidden="true"></i></span></a>
@@ -411,6 +417,7 @@
           enjoy: '家でTEDを楽しむ',
           join: 'コミュニティに参加する',
           about: {
+            headline: "TEDxTsukuba とは",
             summary: "TEDxTsukubaは茨城県つくば市を本拠地とするTEDxイベントです。",
             detail: "これからの時代、地域社会の発展に必要なことは何でしょうか。そのために地域社会に暮らすわたしたちに求められる役割とは何でしょうか。わたしたちTEDxTsukubaはSpread Globally, Connect Locallyというスローガンの元、これらの問いに対して「地域の情報発信と共有」という切り口から取り組んでいます。TEDxTsukubaでは、つくば市を拠点に活躍する行動力ある方々を講演者に招き、彼らのアイデアの発信を通じて、みなさんにつくば市の「今」を伝えていきます。また、TEDxTsukubaは一般的な傍観型イベントと異なり、講演者・参加者・スタッフにより作られる双方向交流型イベントです。イベント参加者同士のコミュニケーションを通じて新たなアクションを創造し、つくば市の知的コミュニティーの形成、活性化を図っていきます。"
           },
@@ -431,6 +438,7 @@
           enjoy: 'Enjoy TED at home',
           join: 'Dive into TEDx community',
           about: {
+            headline: "About us",
             summary: "TEDxTsukuba is one of TEDx events organized at Tsukuba Science city, Ibaraki, Japan.",
             detail: "Through TEDxTsukuba, we focus on bringing people of different backgrounds together to share great ideas worth spreading, based on Tsukuba Science City. We will invite speakers who have brilliant ideas and visions and take community-based action to vitalize the region."
           },
