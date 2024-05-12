@@ -68,6 +68,7 @@ var events = [
         title_ja: "Potter",
         talk: "Force of nature",
         language: "en",
+        image: '2. Euan Craig.JPG',
         video: "https://youtu.be/e0CZ8K-hb98"
       },
       {
@@ -76,6 +77,7 @@ var events = [
         title_ja: "President of Career Design School ",
         talk: "なりたい自分になる勇気",
         language: "ja",
+        image: '6. 熊谷智宏(Kumagai Tomohiro).jpg',
         video: "https://youtu.be/QrXzBjGR0rA"
       },
       {
@@ -84,6 +86,7 @@ var events = [
         title_ja: "Space Artist / Specially Appointed Professor, University of Tsukuba",
         talk: "重力からの解放と、宇宙からの視点",
         language: "ja",
+        image: '1. 逢坂卓郎(Osaka Takuro).jpeg',
         video: "https://youtu.be/5aXXfWhTyUw"
       },
       {
@@ -92,6 +95,7 @@ var events = [
         title_ja: "Skipping Ropes Artist",
         talk: "好きを仕事にしないは時代遅れ",
         language: "ja",
+        image: '3. 粕尾将一(Kasuo Shoichi).JPG',
         video: "https://youtu.be/ox72Doc-nzk"
       },
       {
@@ -100,6 +104,7 @@ var events = [
         title_ja: "Choreographer",
         talk: "Speech by Natsuko Kuroda's Body ~ 身体（わたし）の声が聞こえますか ~",
         language: "ja",
+        image: '4. 黒田なつ子(Kuroda Natsuko).JPG',
         video: "Speech by Natsuko Kuroda's Body ~ 身体（わたし）の声が聞こえますか ~"
       },
       {
@@ -108,6 +113,7 @@ var events = [
         title_ja: "JAXA Research and Development Derectorate ",
         talk: "「夢」から「自分ごと」へ",
         language: "ja",
+        image: '5. 川瀬誠(Makoto Kawase).jpg',
         video: "https://youtu.be/TifRK5DhtBo"
       }
     ]
