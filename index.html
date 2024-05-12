@@ -56,8 +56,8 @@
     </div>
   </div> -->
 
-  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
+  <nav class="navbar is-fixed-top flex" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand" style="margin-left: auto;">
       <div class="navbar-item">
         <button class="button is-small mx-1" @click="lang_switcher_ja()">
           日本語
@@ -72,7 +72,7 @@
   <section class="hero is-fullheight-with-navbar">
     <div class="hero-body">
       <div class="container">
-        <div class="columns is-vcentered reverse-row-order">
+        <div class="columns is-vcentered reverse-row-order mb-6">
           <div class="column is-5-tablet is-6-fullhd has-text-right">
             <figure class="image">
               <img src="assets/landscape.svg">
@@ -80,10 +80,16 @@
           </div>
           <div class="column">
             <p class="vercel-headline has-text-weight-bold has-text-centered-mobile" x-html="$t('motto')"></p>
-            <div class="mt-6 mx-auto has-text-centered-mobile">
-              <img src="./assets/x_bgwhite_oneline.svg" alt="TEDxTsukuba Logo" style="width: 50%; margin-auto;">
+            <div class="mt-4 mx-auto has-text-centered-mobile">
+              <img src="./assets/x_bgwhite_oneline.svg" alt="TEDxTsukuba Logo" style="width: 50%; margin: auto;">
             </div>
           </div>
+        </div>
+        <div x-data="{ locale: $locale(), events: events }">
+          <p x-text="$t('event_listing')"></p>
+          <template x-for="(event, index) in events" id="event">
+            <a x-bind:href="'#' + event.year" x-text="event.year" class="mr-2"></a>
+          </template>
         </div>
       </div>
     </div>
@@ -92,48 +98,8 @@
     </div>
   </section>
 
-
-  <!-- <section class="section" x-data>
-    <div class="container">
-      <h1 class="prose-xl font-bold" x-text="$t('title')">
-        Alpine I18n Example
-      </h1>
-    
-      <p class="text-xl my-2" x-text="$t('hello')"></p>
-    
-      <p class="tracking-tight" x-text="$t('ipsum')"></p>
-    
-      <p>
-        <span x-text="$t('nested')"></span>:
-        <span x-text="$t('deep.one')"></span>
-        <span x-text="$t('deep.two.three')"></span>
-      </p>
-    
-      <a class="bg-gray-200 rounded-md p-1 w-32 font-bold text-center mx-auto text-gray-800"
-        href="https://github.com/rehhouari/alpinejs-i18n">Github</a>
-    </div>
-  </section> -->
-  
-  <!-- <section class="section">
-    <div class="hero-body">
-      <div class="container">
-        <div x-data="{ items: [ {tags: ['foo', 'bar']}, {tags: ['baz']} ] }">
-          <template x-for="(item, parentIndex) in items">
-            <div>
-              <p>Tags <span x-text="parentIndex"></span></p>
-              <template x-for="(tag, childIndex) in item.tags">
-                <span x-text="tag"></span>
-                <span x-text="childIndex"></span>
-              </template>
-            </div>
-          </template>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
   <div x-data="{ locale: $locale(), events: events }">
-    <template x-for="(event, index) in events">
+    <template x-for="(event, index) in events" id="event">
       <section class="hero" x-bind:class="event.color" x-bind:id="event.year">
         <div class="hero-body">
           <div class="columns is-multiline">
@@ -168,7 +134,7 @@
               <div class="columns is-multiline">
                 <template x-for="talk in event.talks">
                   <div class="column is-6">
-                    <div class="notification is-white p-5">
+                    <div class="notification is-white p-4">
                       <div class="columns is-mobile">
                         <div class="column is-3-mobile is-4-tablet is-3-desktop">
                           <figure class="image is-square">
@@ -180,16 +146,16 @@
                             </template>
                           </figure>
                         </div>
-                        <div class="column">
+                        <div class="column pl-0">
                           <p>
                             <template x-if="$locale() === 'ja'">
-                              <span x-text="talk.name_ja" class="is-size-4 is-size-5-tablet is-size-4-desktop"></span>
+                              <span x-text="talk.name_ja" class="is-size-5"></span>
                             </template>
                             <template x-if="$locale() === 'en'">
                               <span x-text="talk.name_en" class="is-size-5"></span>
                             </template>
                             <br>
-                            <p x-text="talk.title_ja" class="has-text-grey"></p>
+                            <p x-text="talk.title_ja" class="has-text-grey is-size-6"></p>
                           </p>
                           <hr class="my-2">
                           <div class="card-bottom">
@@ -205,7 +171,7 @@
                               </div>
                               <div class="level-right">
                                 <div class="level-item">
-                                  <a x-bind:href="talk.video" target="_blank" class="button is-info is-light">
+                                  <a x-bind:href="talk.video" target="_blank" class="button is-info is-light is-small">
                                     <i class="fab fa-youtube fa-lg has-text-red" aria-hidden="true"></i>&nbsp;
                                     <span x-text="$t('watch')"> </span>
                                   </a>
@@ -449,6 +415,7 @@
           en: "英語",
           title: 'TEDxTsukuba 公式サイト',
           motto: 'Spread Globally, <br>Connect Locally.',
+          event_listing: 'これまでに開催したイベント',
           watch: '動画を観る',
           enjoy: '家でTEDを楽しむ',
           join: 'コミュニティに参加する',
@@ -468,6 +435,7 @@
           en: "English",
           title: 'TEDxTsukuba Official Website',
           motto: 'Spread Globally, <br>Connect Locally.',
+          event_listing: 'Event listing',
           watch: 'Watch',
           enjoy: 'Enjoy TED at home',
           join: 'Dive into TEDx community',
